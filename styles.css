@@ -1,0 +1,116 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+ul.links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(170, 0, 170);
+    display: flex;
+    border: thick solid;
+}
+
+li {
+    font-family: "PremierSans-Heavy", Arial, Helvetica, sans-serif;
+}
+  
+li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.active {
+    background-color: rgb(77, 0, 128);
+}
+
+body {
+    display: flex;
+    flex: 1;
+    min-height: 98vh;
+    flex-direction: column;
+}
+
+li a:hover {
+    background-color: purple;
+}
+
+.content {
+    flex: 1;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer {
+    height: 100px;
+    background-color: rgb(156, 156, 156);
+    margin-top: auto;
+    text-align: center; 
+    font-family: 'PremierSans-Regular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.reports {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.report-container {
+    background-color: lightblue;
+    border-radius: 25px;
+    height: 500px;
+    width: 400px;
+    border: thick solid white;
+    text-align: center;
+}
+
+.report-button {
+    height: 50px;
+    width: 300px;
+    margin: 20px;
+    background-color: rgb(134, 205, 228);
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 320px;
+}
+
+.subtext {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 22px;
+    font-family: 'PremierSans-Regular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.article {
+    font-family: 'PremierSans-Regular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.article-text {
+    display: flex;
+}
+
+.about {
+    margin-left: 10px;
+    margin-right: 10px;
+}
