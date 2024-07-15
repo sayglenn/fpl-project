@@ -1,31 +1,36 @@
-# fpl-project
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A website created to simplify and centralise information related to my personal Fantasy Premier League mini-league. The website mainly consists of four segments, the Homepage, Reports, Leaderboard and About. The information regarding these pages will be detailed further below. Fantasy Football is simply a game where managers are allocated a set budget of 100.0m, and they can pick 2 goalkeepers, 5 defenders, 5 midfielders, and 3 forwards. Each player has their own price based on their performances in the season which can move up or down. Each player can score points based on their performance in the week and winners are determined by the highest points overall.
+## Getting Started
 
-## Homepage
+First, run the development server:
 
-The Homepage is a simple landing page for the mini-league participants to access the website. It gives a short overview of the website and displays what we call the Hall-of-Fame picks, where players who achieved negative points and were owned by some of the managers are displayed with a short description.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Reports
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The Reports page simply acts as a page to display the three reports written weekly by participants in our mini-league. There are three reports written weekly.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Gameweek Report
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-  This report summarises the points total every gameweek and gives a rough summary of any important pointers to take note of during the gameweek.
+## Learn More
 
-- Friday Forecasts
+To learn more about Next.js, take a look at the following resources:
 
-  This report summarises the fixtures of the gameweek, with some segments like Game of the Week, Potential Upset, Big Favourites, etc. A detailed breakdown is given on some fixtures and predicts certain potential results.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Deadline Dilemmas
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-  This report summarises some of any potential players to target for the gameweek given any updates toward player availibility and shift in roles of players to potentially output more points.
+## Deploy on Vercel
 
-## Leaderboard
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Currently a work in progress, but the leaderboard intends to leverage certain functionality and use API to extract live data and information regarding each manager's team to provide timely updates and information about the teams in our mini-league.
-
-## About
-
-The about page simply writes about my drive and motivation behind writing creating the Fantasy Football Website and some additional information about myself and other contributors.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
