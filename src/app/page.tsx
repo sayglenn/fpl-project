@@ -1,9 +1,11 @@
-import Image from "next/image";
+"use client";
+
+import { Header } from "@/components/home/Header";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
