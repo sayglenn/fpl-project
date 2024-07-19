@@ -5,10 +5,10 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import HOFPlayerCard from "../home/HOFPlayerCard";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -298,22 +298,11 @@ const CarouselNext = React.forwardRef<
 });
 CarouselNext.displayName = "CarouselNext";
 
-export default function DesktopCarousel() {
-  return (
-    <>
-      <Carousel
-        plugins={[
-          Autoplay({
-            delay: 3000,
-            stopOnMouseEnter: false,
-            stopOnInteraction: false,
-          }),
-        ]}
-        className="w-[75%] lg:w-[65%]"
-      >
-        <CarouselContent className="items-center"></CarouselContent>
-        <CarouselDots className="mt-5" />
-      </Carousel>
-    </>
-  );
-}
+export {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselDots,
+  CarouselPrevious,
+  CarouselNext,
+};
