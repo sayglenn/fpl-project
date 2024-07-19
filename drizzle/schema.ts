@@ -15,6 +15,7 @@ const bytea = customType<{ data: Buffer; notNull: false; default: false }>({
   },
 });
 
+export const db = drizzle(sql);
 export const FameTable = pgTable(
   'players',
   {
