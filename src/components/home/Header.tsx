@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import PlayerCarousel from "./PlayerCarousel";
 
-export function Header() {
+export default function Header() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => setLoaded(true), []);
