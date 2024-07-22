@@ -9,7 +9,7 @@ export default function ReportsFooter() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="w-[540px] border-t-2 border-gray-300 pb-3">
+        <div className="w-full lg:w-[540px] border-t-2 border-gray-300 pb-3">
           <p
             className={`text-center text-4xl font-bold transition-all duration-1000 mt-4 mb-1 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"

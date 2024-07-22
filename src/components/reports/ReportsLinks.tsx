@@ -6,7 +6,7 @@ import { TfiThought } from "react-icons/tfi";
 export default function ReportsLinks() {
   const titleStyle = "text-2xl font-bold text-center text-white underline";
   const containerStyle =
-    "bg-purple-500 flex flex-col items-center p-6 rounded-lg w-[300px] gap-6";
+    "bg-purple-500 flex flex-col items-center p-6 rounded-lg w-[300px] gap-6 transition duration-400 border-black hover:shadow-2xl hover:-translate-y-4 hover:border-4";
   const descriptionStyle = "text-center text-white italic";
 
   return (

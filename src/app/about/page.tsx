@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="border-b-2 border-gray-300 py-6 w-[540px]">
+        <div className="border-b-2 border-gray-300 py-6 w-full lg:w-[540px]">
           <p
             className={`mb-2 text-center text-4xl font-bold transition-all duration-1000 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
@@ -34,7 +34,7 @@ export default function Page() {
             over the years.
           </p>
         </div>
-        <div className="border-b-2 border-gray-300 py-6 w-[540px]">
+        <div className="border-b-2 border-gray-300 py-6 w-full lg:w-[540px]">
           <p
             className={`mb-2 text-center text-4xl font-bold transition-all duration-1000 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
@@ -52,7 +52,7 @@ export default function Page() {
             for football and fantasy football as I do.
           </p>
         </div>
-        <div className="border-b-2 border-gray-300 py-6 w-[540px]">
+        <div className="border-b-2 border-gray-300 py-6 w-full lg:w-[540px]">
           <p
             className={`mb-2 text-center text-4xl font-bold transition-all duration-1000 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
@@ -69,7 +69,7 @@ export default function Page() {
           </p>
           <Images />
         </div>
-        <div className="py-6 w-[540px]">
+        <div className="py-6 w-full lg:w-[540px]">
           <p
             className={`mb-2 text-center text-4xl font-bold transition-all duration-1000 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"

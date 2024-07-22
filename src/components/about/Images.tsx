@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Images() {
   return (
     <>
-      <div className="flex flex-row gap-5 justify-center pt-4">
+      <div className="flex flex-row gap-5 justify-center pt-4 flex-wrap">
         <Image src={NextJS} alt="Next.js" width={100} height={100} />
         <Image src={PostgreSQL} alt="PostgreSQL" width={100} height={100} />
         <Image src={TailwindCSS} alt="TailwindCSS" width={100} height={100} />

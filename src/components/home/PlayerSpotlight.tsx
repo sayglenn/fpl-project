@@ -33,7 +33,7 @@ const players: Player[] = [
     price: 4.5,
     position: "DEF",
     description:
-      "Rayan Aït-Nouri is a French professional footballer who plays as a left-back for Wolverhampton Wanderers. He is known for his attacking prowess and defensive capabilities, making him a great pick for your fantasy team if you are looking for defenders with strong attacking capabilities at cheaper options.",
+      "Rayan Aït-Nouri is an Algerian professional footballer who plays as a left-back for Wolverhampton Wanderers. He is known for his attacking prowess and defensive capabilities, making him a great pick for your fantasy team if you are looking for defenders with strong attacking capabilities at cheaper options.",
     image: RayanAitNouri,
   },
 ];
@@ -62,7 +62,7 @@ function PlayerSpotlightCard({ player }: { player: Player }) {
 export default function PlayerSpotlight() {
   return (
     <>
-      <div className="flex flex-row justify-around">
+      <div className="flex flex-row justify-around flex-wrap gap-4">
         {players.map((player, index) => (
           <PlayerSpotlightCard key={index} player={player} />
         ))}
