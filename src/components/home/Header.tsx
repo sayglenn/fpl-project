@@ -13,7 +13,7 @@ export default function Header() {
       <div className="mt-3 flex flex-col items-center">
         <div className="border-b-2 border-gray-300 py-6">
           <p
-            className={`text-center text-4xl font-bold transition-all duration-1000 ${
+            className={`text-center text-4xl font-bold transition-all duration-1000 mb-1 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
@@ -29,7 +29,7 @@ export default function Header() {
         </div>
         <div className="py-6 border-b-2 border-gray-300">
           <p
-            className={`text-center text-3xl font-bold transition-all duration-1000 ${
+            className={`text-center text-3xl font-bold transition-all duration-1000 mb-1 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
@@ -46,7 +46,7 @@ export default function Header() {
         </div>
         <div className="mt-3 py-6">
           <p
-            className={`text-center text-3xl font-bold transition-all duration-1000 ${
+            className={`text-center text-3xl font-bold transition-all duration-1000 mb-1 ${
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >

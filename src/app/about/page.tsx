@@ -82,8 +82,8 @@ export default function Page() {
               loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
-            I am Glenn, currently studying Computer Science in National
-            University of Singapore. I am a huge fan of football and fantasy
+            I&apos;m Glenn, currently studying Computer Science in National
+            University of Singapore. I&apos;m a huge fan of football and fantasy
             football and I hope you enjoy the website and the reports that we
             have written.
           </p>
