@@ -1,21 +1,13 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { sql } from '@vercel/postgres';
-import { drizzle } from 'drizzle-orm/vercel-postgres';
-import { reports } from "@/drizzle/schema";
-import axios from "axios";
-import { NextApiRequest, NextApiResponse } from "next";
-
-interface Player {
-  name: string;
-  price: number;
-  position: string;
-  description?: string;
-}
-
+import { db } from "@/src/drizzle/schema";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-const db = drizzle(sql);
+export function getUserFromDb(email: string, password: string) {
+  return db.query.users.findFirst({
+    where: (users, { eq }) => eq(users.email, email) && eq(users.password, password),
+  });
+}

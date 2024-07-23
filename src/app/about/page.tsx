@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Images from "@/components/about/Images";
-import SocialLinks from "@/components/about/SocialLinks";
+import Images from "@/src/components/about/Images";
+import SocialLinks from "@/src/components/about/SocialLinks";
 
 export default function Page() {
   const [loaded, setLoaded] = useState(false);
