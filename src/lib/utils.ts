@@ -6,8 +6,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function getUserFromDb(email: string, password: string) {
+export function getUserFromDb(email: string) {
   return db.query.users.findFirst({
-    where: (users, { eq }) => eq(users.email, email) && eq(users.password, password),
+    where: (users, { eq }) => eq(users.email, email),
   });
 }

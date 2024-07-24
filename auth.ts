@@ -6,25 +6,32 @@ import { db } from "@/src/drizzle/schema";
 import { ZodError } from "zod";
 import { getUserFromDb } from "@/src/lib/utils";
 import type { Provider } from "next-auth/providers"
+// import bcrypt from "bcrypt";
 
 const bcrypt = require('bcrypt');
 
 const providers: Provider[] = [
   Credentials({
     credentials: {
-      email: {},
-      password: {},
+      email: { label: "Email", type: "email", placeholder: "jsmith"},
+      password: { label: "Password", type: "password"},
     },
     authorize: async (credentials) => {
       try {
         let user = null;
-        const { email, password } = await signInSchema.parseAsync(credentials);
+        const { email, password } = signInSchema.parse(credentials);
         const pwHash = await bcrypt.hash(password, 10);
-        user = await getUserFromDb(email, pwHash);
+        user = await getUserFromDb(email);
 
         if (!user) {
           throw new Error("User not found.")
         }
+
+        const isPasswordValid = await bcrypt.compare(pwHash, user.password);
+        if (!isPasswordValid) {
+          throw new Error("Invalid credentials.");
+        }
+        
         return user;
       } catch (error) {
         if (error instanceof ZodError) {
