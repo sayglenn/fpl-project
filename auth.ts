@@ -6,28 +6,25 @@ import { db } from "@/src/drizzle/schema";
 import { ZodError } from "zod";
 import { getUserFromDb } from "@/src/lib/utils";
 import type { Provider } from "next-auth/providers"
-// import bcrypt from "bcrypt";
-
 const bcrypt = require('bcrypt');
 
 const providers: Provider[] = [
   Credentials({
     credentials: {
-      email: { label: "Email", type: "email", placeholder: "jsmith"},
+      email: { label: "Email", type: "email"},
       password: { label: "Password", type: "password"},
     },
     authorize: async (credentials) => {
       try {
         let user = null;
         const { email, password } = signInSchema.parse(credentials);
-        const pwHash = await bcrypt.hash(password, 10);
         user = await getUserFromDb(email);
 
         if (!user) {
           throw new Error("User not found.")
         }
 
-        const isPasswordValid = await bcrypt.compare(pwHash, user.password);
+        const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
           throw new Error("Invalid credentials.");
         }
@@ -43,19 +40,13 @@ const providers: Provider[] = [
   }),
 ]
 
-export const providerMap = providers.map((provider) => {
-  if (typeof provider === "function") {
-    const providerData = provider()
-    return { id: providerData.id, name: providerData.name }
-  } else {
-    return { id: provider.id, name: provider.name }
-  }
-});
-
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: DrizzleAdapter(db),
   providers,
   pages: {
     signIn: "/account/login",
+  },
+  session: {
+    strategy: "jwt",
   }
 })

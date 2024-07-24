@@ -21,7 +21,9 @@ export async function POST(request : NextRequest) {
     name: name,
     email: email,
     password: hashed,
-    role: 'user',
+    emailVerified: new Date(),
+    image: "",
+    role: 'guest',
   });
 
   return NextResponse.json(user);

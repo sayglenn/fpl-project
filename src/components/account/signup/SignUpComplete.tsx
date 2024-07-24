@@ -8,6 +8,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/src/components/ui/alert-dialog";
+import Link from "next/link";
 
 export default function SignUpComplete({
   isDialogOpen,
@@ -30,9 +31,11 @@ export default function SignUpComplete({
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogAction className="bg-white text-purple-600">
-              Continue
-            </AlertDialogAction>
+            <Link href="/account/login">
+              <AlertDialogAction className="bg-white text-purple-600">
+                Continue
+              </AlertDialogAction>
+            </Link>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

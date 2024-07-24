@@ -1,14 +1,12 @@
 "use server";
 
-import { SubmitHandler } from "react-hook-form";
-
-type FormValues = {
-  name: string,
-  email: string,
-  password: string,
-}
+import { FieldValues } from "react-hook-form";
+import { signIn, signOut } from "@/auth";
   
-export const loginSubmit: SubmitHandler<FormValues> = async (data) => {
+export const authenticate = async (data: FieldValues) => {
   "use server";
-  console.log(data);
+  await signIn("credentials", {
+    ...data,
+    redirect: false,
+  });
 };

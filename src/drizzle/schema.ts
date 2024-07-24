@@ -14,7 +14,7 @@ import {
 } from 'drizzle-orm/pg-core';
 
 export const reportEnum = pgEnum('type', ['gw', 'dd', 'ff']);
-export const userEnum = pgEnum('role', ['admin', 'user']);
+export const userEnum = pgEnum('role', ['admin', 'guest']);
 
 export const reports = pgTable('report', {
   id: text('id').primaryKey(),
@@ -29,6 +29,8 @@ export const users = pgTable('user', {
   name: text('name').notNull(),
   email: text('email').notNull(),
   password: text('password').notNull(),
+  emailVerified: timestamp("emailVerified", { mode: "date" }),
+  image: text("image"),
   role: userEnum('role').notNull(),
 });
 

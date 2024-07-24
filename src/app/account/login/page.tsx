@@ -1,13 +1,14 @@
 "use client";
 
-import { redirect } from "next/navigation";
-import { signIn, auth, providerMap } from "@/auth";
-import { AuthError } from "next-auth";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import Link from "next/link";
-import { loginSubmit } from "@/src/lib/forms";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { authenticate } from "@/src/lib/forms";
+import { Spinner } from "@/src/components/ui/Spinner";
 
 export default function Page() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -18,8 +19,24 @@ export default function Page() {
     reValidateMode: "onSubmit",
   });
 
+  const [loaded, setLoaded] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
   const emailValue = watch("email", "");
   const passwordValue = watch("password", "");
+
+  const loginUser = async (data: FieldValues) => {
+    setSubmitting(true);
+    try {
+      await authenticate(data);
+      reset();
+      router.push("/account");
+    } catch (error) {
+      setSubmitting(false);
+    }
+  };
+
+  useEffect(() => setLoaded(true), []);
 
   const fieldClass =
     "w-full p-3 border border-gray-300 placeholder:font-[300] placeholder:text-[15px]";
@@ -31,21 +48,22 @@ export default function Page() {
     <>
       <div className="flex flex-col items-center mt-6">
         <div className="p-3 border-b-2 border-gray-300 flex flex-col items-center">
-          <p className="text-4xl font-bold mb-1">Sign In</p>
-          <p className="text-center italic text-md transform text-gray-500">
+          <p
+            className={`text-center text-4xl font-bold transition-all duration-1000 mb-1 ${
+              loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+            }`}
+          >
+            Sign In
+          </p>
+          <p
+            className={`text-center italic text-md transform text-gray-500 transition-all delay-200 duration-1000 ${
+              loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+            }`}
+          >
             Log in to your account.
           </p>
         </div>
-        <form
-          // action={async (formData) => {
-          //   "use server";
-          //   await signIn("credentials", formData);
-          // }}
-          onSubmit={handleSubmit(async (data) => {
-            console.log(data);
-          })}
-          className="p-3 w-[400px]"
-        >
+        <form onSubmit={handleSubmit(loginUser)} className="p-3 w-[400px]">
           <div className="relative mt-3">
             <input
               {...register("email", {
@@ -101,8 +119,13 @@ export default function Page() {
               <p className={errorClass}>{errors.password.message as string}</p>
             )}
           </div>
-          <button className="mt-5 w-full border-[3px] border-purple-500 py-3 text-white bg-purple-500 rounded-xl font-bold hover:bg-white hover:text-purple-500">
-            Sign In
+          <button
+            disabled={submitting}
+            className={`mt-5 w-full border-[3px] border-purple-500 text-white bg-purple-500 rounded-xl font-bold hover:bg-white hover:text-purple-500 ${
+              submitting ? "py-0" : "py-3"
+            }`}
+          >
+            {submitting ? <Spinner /> : "Sign In"}
           </button>
         </form>
         <p className="italic text-gray-400">
