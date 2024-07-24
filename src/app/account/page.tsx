@@ -1,6 +1,6 @@
 import { auth, signOut } from "@/auth";
 import { redirect } from "next/navigation";
-import AccountHeader from "@/src/components/account/Header";
+import AccountHeader from "@/src/components/account/AccountHeader";
 
 export default async function Page() {
   const session = await auth();
