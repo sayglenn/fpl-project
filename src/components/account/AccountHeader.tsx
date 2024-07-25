@@ -8,7 +8,7 @@ export default function AccountHeader() {
 
   return (
     <>
-      <div className="flex flex-col items-center mt-6 border-b-2 border-gray-300 pb-3 lg:w-[540px]">
+      <div className="flex flex-col items-center mt-6 border-b-2 border-gray-300 pb-3 w-full lg:w-[540px]">
         <p
           className={`text-center text-4xl font-bold transition-all duration-1000 mb-1 ${
             loaded ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"

@@ -84,7 +84,10 @@ export default function Page() {
         </div>
       </div>
       <div className="flex flex-col items-center my-2">
-        <form className="w-[400px]" onSubmit={handleSubmit(registerUser)}>
+        <form
+          className="w-[90%] md:w-[400px]"
+          onSubmit={handleSubmit(registerUser)}
+        >
           <div className="relative mt-4">
             <input
               placeholder="Name"

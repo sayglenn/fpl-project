@@ -20,17 +20,17 @@ export default function SignUpComplete({
   return (
     <>
       <AlertDialog open={isDialogOpen} onOpenChange={setDialog}>
-        <AlertDialogContent className="bg-purple-600">
+        <AlertDialogContent className="bg-purple-600 w-[80%] rounded-lg">
           <AlertDialogHeader>
-            <AlertDialogTitle className="text-white">
+            <AlertDialogTitle className="text-white text-center">
               Thank you for signing up!
             </AlertDialogTitle>
-            <AlertDialogDescription className="text-white">
+            <AlertDialogDescription className="text-white text-center">
               Thank you for signing up with an account! You can proceed to log
               in now.
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
+          <AlertDialogFooter className="flex flex-row justify-center">
             <Link href="/account/login">
               <AlertDialogAction className="bg-white text-purple-600">
                 Continue

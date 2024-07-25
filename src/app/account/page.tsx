@@ -14,7 +14,7 @@ export default async function Page() {
     <>
       <div className="flex flex-col items-center">
         <AccountHeader />
-        <div className="flex flex-col mt-8 w-[340px]">
+        <div className="flex flex-col mt-8 w-full lg:w-[340px]">
           <p className="text-2xl font-bold underline mb-4 self-center">
             Your Profile
           </p>

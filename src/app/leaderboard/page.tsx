@@ -14,7 +14,7 @@ export default async function Page() {
         <div className="border-b-2 border-gray-300 p-3">
           <p className="text-4xl font-bold text-center mb-1">Leaderboard</p>
           <p className="text-center italic text-md transform text-gray-500">
-            The leaderboard of DHFPL. Arranges the payers by order of total
+            The leaderboard of DHFPL. Arranges the players by order of total
             points.
           </p>
         </div>

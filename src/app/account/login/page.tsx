@@ -63,7 +63,10 @@ export default function Page() {
             Log in to your account.
           </p>
         </div>
-        <form onSubmit={handleSubmit(loginUser)} className="p-3 w-[400px]">
+        <form
+          onSubmit={handleSubmit(loginUser)}
+          className="p-3 w-[90%] md:w-[400px]"
+        >
           <div className="relative mt-3">
             <input
               {...register("email", {
