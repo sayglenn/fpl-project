@@ -6,6 +6,21 @@ import {
 } from "../ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import HOFPlayerCard from "./HOFPlayerCard";
+import hof1 from "./images/HOF1.png";
+import hof2 from "./images/HOF2.png";
+
+const hof = [
+  {
+    name: "Declan Rice",
+    week: "GW3",
+    image: hof1,
+  },
+  {
+    name: "William Saliba",
+    week: "GW8",
+    image: hof2,
+  },
+];
 
 export default function PlayerCarousel() {
   return (
@@ -21,9 +36,13 @@ export default function PlayerCarousel() {
         className="h-[300px] w-[500px] mt-1"
       >
         <CarouselContent className="items-center">
-          {Array.from({ length: 5 }, (_, i) => (
+          {hof.map((player, i) => (
             <CarouselItem key={i} className="p-2 flex justify-center h-[250px]">
-              <HOFPlayerCard name="Player Name" week="GW1" image="" />
+              <HOFPlayerCard
+                name={player.name}
+                week={player.week}
+                image={player.image}
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
